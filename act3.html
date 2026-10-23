@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activité 2</title>
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- ReactDOM -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel pour JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Endroit où React va afficher le résultat -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const apprenant = {
+            nomApprenant: 'imen',
+            prenomApprenant: 'mekni'
+        };
+
+        function accueilEtudiant(apprenant) {
+            return apprenant.nomApprenant + ' ' + apprenant.prenomApprenant;
+        }
+        class accueil extends React.Component {
+  render() {
+    return <strong>Bonne découverte de React</strong>
+  }
+}
+
+        const elt = (
+            <strong>
+                Bonne découverte de React {accueilEtudiant(apprenant)}
+            </strong>
+        );
+
+        // Afficher elt dans la page
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(elt);
+ReactDOM.render(<accueil />, document.getElementById('1'))
+    </script>
+
+</body>
+</html>
